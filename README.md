@@ -1,12 +1,13 @@
-Role Name
-=========
+# Ansible Role: drone
 
-A brief description of the role goes here.
+This role will install drone [agents][1] + [server][2] using [docker](https://www.docker.com/)
 
-Requirements
-------------
+[1]:https://docs.drone.io/administration/agents/
+[2]:https://docs.drone.io/administration/server/
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## Requirements
+
+This role requires: [docker installed](https://docs.docker.com/install/) on the server
 
 Role Variables
 --------------
