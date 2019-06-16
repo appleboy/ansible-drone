@@ -53,7 +53,7 @@ The ansible role offers additional parameters - please check `defaults/main.yml`
 
 import the drone role from 
 
-```
+```bash
 $ ansible-galaxy install appleboy.drone
 ```
 
