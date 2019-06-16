@@ -51,11 +51,21 @@ The ansible role offers additional parameters - please check `defaults/main.yml`
 
 ## Example Playbook
 
+import the drone role from 
+
+```
+$ ansible-galaxy import appleboy ansible-drone
+```
+
+Add the following in playbook.
+
+```yml
 - hosts: drone
   vars_files:
     - vars/main.yml
   roles:
     - { role: appleboy.drone }
+```
 
 Inside `vars/main.yml` for `drone-server`
 
