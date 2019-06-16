@@ -9,31 +9,73 @@ This role will install drone [agents][1] + [server][2] using [docker](https://ww
 
 This role requires: [docker installed](https://docs.docker.com/install/) on the server
 
-Role Variables
---------------
+### Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Change the `drone_host_port` for expose port if conflict and update the `drone_version` from [github release page](https://github.com/drone/drone/releases).
 
-Dependencies
-------------
+```yml
+drone_version: "latest"
+drone_host_port: "8080"
+```
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Install the drone server or agent via the following config. Default is `false`.
 
-Example Playbook
-----------------
+```yml
+drone_server_enable: "false"
+drone_agent_enable: "false"
+```
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Default database is `sqlite` and drone can be installed with `mysql` or `postgres` database. See the followings. 
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yml
+drone_database_driver: "postgres"
+drone_postgres_data_dir: "/var/lib/postgresql/data"
+drone_postgres_password: "drone"
+drone_postgres_user: "drone"
+drone_postgres_db: "drone
+```
 
-License
--------
+mysql database (5.7 version)
 
-BSD
+```yml
+drone_database_driver: "mysql"
+drone_mysql_data_dir: "/var/lib/mysql/data"
+drone_mysql_password: "drone"
+drone_mysql_user: "drone"
+drone_mysql_db: "drone"
+```
 
-Author Information
-------------------
+### additional parameters
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+The ansible role offers additional parameters - please check `defaults/main.yml` file.
+
+## Example Playbook
+
+- hosts: drone
+  vars_files:
+    - vars/main.yml
+  roles:
+    - { role: appleboy.drone }
+
+Inside `vars/main.yml` for `drone-server`
+
+```yml
+drone_server_enable: "true"
+drone_version: "latest"
+drone_github_client_id: "e2bdde88b88f7ccf873a"
+drone_github_client_secret: "b0412c975bbf2b6fcd9b3cf5f19c8165b1c14d0c"
+drone_server_host: "368a7a66.ngrok.io"
+drone_server_proto: "https"
+drone_rpc_secret: "30075d074bfd9e74cfd0b84a5886b986"
+drone_database_driver: "mysql"
+drone_database_datasource: "drone:drone@tcp(mysql:3306)/drone?parseTime=true"
+```
+
+for drone-agent:
+
+```yml
+drone_agent_enable: "true"
+drone_version: "latest"
+drone_rpc_server: "http://192.168.64.2:8081"
+drone_rpc_secret: "30075d074bfd9e74cfd0b84a5886b986"
+```
