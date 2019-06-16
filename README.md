@@ -54,7 +54,7 @@ The ansible role offers additional parameters - please check `defaults/main.yml`
 import the drone role from 
 
 ```
-$ ansible-galaxy import appleboy ansible-drone
+$ ansible-galaxy install -f appleboy.drone
 ```
 
 Add the following in playbook.
