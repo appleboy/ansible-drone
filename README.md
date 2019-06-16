@@ -72,13 +72,11 @@ Inside `vars/main.yml` for `drone-server`
 ```yml
 drone_server_enable: "true"
 drone_version: "latest"
-drone_github_client_id: "e2bdde88b88f7ccf873a"
-drone_github_client_secret: "b0412c975bbf2b6fcd9b3cf5f19c8165b1c14d0c"
 drone_server_host: "368a7a66.ngrok.io"
 drone_server_proto: "https"
 drone_rpc_secret: "30075d074bfd9e74cfd0b84a5886b986"
-drone_database_driver: "mysql"
-drone_database_datasource: "drone:drone@tcp(mysql:3306)/drone?parseTime=true"
+drone_github_client_id: "e2bdde88b88f7ccf873a"
+drone_github_client_secret: "b0412c975bbf2b6fcd9b3cf5f19c8165b1c14d0c"
 ```
 
 for drone-agent:
@@ -86,6 +84,6 @@ for drone-agent:
 ```yml
 drone_agent_enable: "true"
 drone_version: "latest"
-drone_rpc_server: "http://192.168.64.2:8081"
+drone_rpc_server: "http://192.168.64.2:8080"
 drone_rpc_secret: "30075d074bfd9e74cfd0b84a5886b986"
 ```
