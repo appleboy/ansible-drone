@@ -19,8 +19,8 @@ galaxy_info:
     - drone
     - docker
     - ci
-    - drone-ci
     - droneci
+    - devops
 
 dependencies:
   - { role: geerlingguy.docker }
