@@ -1,5 +1,7 @@
 # Ansible Role: drone
 
+<img src="images/logo.png">
+
 This role will install drone [agents][1] + [server][2] using [docker](https://www.docker.com/)
 
 [1]:https://docs.drone.io/administration/agents/
