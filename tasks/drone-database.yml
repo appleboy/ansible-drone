@@ -29,6 +29,7 @@
   tags:
     - postgres
     - database
+    - skip_ansible_lint
 
 - name: Creates mysql directory
   file:
@@ -61,3 +62,4 @@
   tags:
     - mysql
     - database
+    - skip_ansible_lint

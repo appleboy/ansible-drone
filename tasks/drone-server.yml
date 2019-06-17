@@ -48,11 +48,12 @@
     volumes:
       - "{{ drone_sqlite_dir }}:/data"
     env_file: /etc/drone/drone-server.env
-  when: ((drone_server_config is defined and drone_server_config.changed) or
-        (drone_sqlite_folder is defined and drone_sqlite_folder.changed)) and
+  when: (drone_server_config is defined and drone_server_config.changed) or
+        (drone_sqlite_folder is defined and drone_sqlite_folder.changed) or
         drone_database_driver == "sqlite"
   tags:
     - drone-server
+    - skip_ansible_lint
 
 - name: run drone server with postgres or mysql database
   docker_container:
@@ -67,8 +68,9 @@
     volumes:
       - "{{ drone_sqlite_dir }}:/data"
     env_file: /etc/drone/drone-server.env
-  when: ((drone_server_config is defined and drone_server_config.changed) or
-        (drone_postgres_data_dir is defined and drone_postgres_data_dir.changed)) or
+  when: (drone_server_config is defined and drone_server_config.changed) or
+        (drone_postgres_data_dir is defined and drone_postgres_data_dir.changed) or
         drone_database_driver != "sqlite"
   tags:
     - drone-server
+    - skip_ansible_lint

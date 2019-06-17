@@ -28,3 +28,4 @@
   when: drone_agent_config is defined and drone_agent_config.changed
   tags:
     - drone-agent
+    - skip_ansible_lint
