@@ -4,6 +4,8 @@
 
 This role will install drone [agents][1] + [server][2] using [docker](https://www.docker.com/)
 
+[![Build Status](https://cloud.drone.io/api/badges/appleboy/ansible-drone/status.svg)](https://cloud.drone.io/appleboy/ansible-drone)
+
 [1]:https://docs.drone.io/administration/agents/
 [2]:https://docs.drone.io/administration/server/
 
