@@ -1,7 +1,7 @@
 {
   build(version, os='linux', arch='amd64'):: {
     kind: 'pipeline',
-    name: os + '-' + arch,
+    name: os + '-' + arch + '-' + version,
     platform: {
       os: os,
       arch: arch,

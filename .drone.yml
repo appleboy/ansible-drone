@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: linux-amd64
+name: linux-amd64-2.4
 
 platform:
   os: linux
@@ -20,7 +20,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux-amd64
+name: linux-amd64-2.5
 
 platform:
   os: linux
@@ -40,7 +40,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux-amd64
+name: linux-amd64-2.6
 
 platform:
   os: linux
@@ -60,7 +60,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux-amd64
+name: linux-amd64-2.7
 
 platform:
   os: linux
