@@ -17,8 +17,8 @@
         commands: [
           'echo "==> Syntax Check on Ansible ' + version + ' ..."',
           'ansible --version',
-          'ansible-lint tasks/setup.yml',
-          'ansible-playbook --syntax-check',
+          'ansible-lint tasks/main.yml',
+          'ansible-playbook --syntax-check tasks/main.yml',
         ],
       },
     ],
