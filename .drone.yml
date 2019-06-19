@@ -11,4 +11,5 @@ steps:
   pull: always
   image: ansible/ansible:ubuntu1404
   commands:
-  - make lint
+  - ansible --version
+  - ansible-lint tasks/setup.yml
