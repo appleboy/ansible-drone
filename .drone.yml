@@ -14,7 +14,6 @@ steps:
   - "echo \"==> Syntax Check on Ansible 2.4 ...\""
   - ansible --version
   - ansible-lint tasks/main.yml
-  - ansible-playbook --syntax-check tasks/main.yml
   environment:
     ANSIBLE_VERSION: 2.4
 
@@ -34,7 +33,6 @@ steps:
   - "echo \"==> Syntax Check on Ansible 2.5 ...\""
   - ansible --version
   - ansible-lint tasks/main.yml
-  - ansible-playbook --syntax-check tasks/main.yml
   environment:
     ANSIBLE_VERSION: 2.5
 
@@ -54,7 +52,6 @@ steps:
   - "echo \"==> Syntax Check on Ansible 2.6 ...\""
   - ansible --version
   - ansible-lint tasks/main.yml
-  - ansible-playbook --syntax-check tasks/main.yml
   environment:
     ANSIBLE_VERSION: 2.6
 
@@ -74,7 +71,6 @@ steps:
   - "echo \"==> Syntax Check on Ansible 2.7 ...\""
   - ansible --version
   - ansible-lint tasks/main.yml
-  - ansible-playbook --syntax-check tasks/main.yml
   environment:
     ANSIBLE_VERSION: 2.7
 
