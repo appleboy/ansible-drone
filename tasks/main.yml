@@ -1,8 +1,8 @@
 ---
-  - include: setup.yml
-  - include: drone-database.yml
+  - import_playbook: setup.yml
+  - import_playbook: drone-database.yml
     when: drone_server_enable == "true" and drone_database_driver != "sqlite"
-  - include: drone-server.yml
+  - import_playbook: drone-server.yml
     when: drone_server_enable == "true"
-  - include: drone-agent.yml
+  - import_playbook: drone-agent.yml
     when: drone_agent_enable == "true"
