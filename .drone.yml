@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: testing
+name: linux-amd64
 
 platform:
   os: linux
@@ -9,7 +9,73 @@ platform:
 steps:
 - name: lint
   pull: always
-  image: ansible/ansible:ubuntu1404
+  image: chusiang/ansible:2.4
   commands:
+  - "echo \"==> Syntax Check on Ansible 2.4 ...\""
   - ansible --version
   - ansible-lint tasks/setup.yml
+  - ansible-playbook --syntax-check
+  environment:
+    ANSIBLE_VERSION: 2.4
+
+---
+kind: pipeline
+name: linux-amd64
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: lint
+  pull: always
+  image: chusiang/ansible:2.5
+  commands:
+  - "echo \"==> Syntax Check on Ansible 2.5 ...\""
+  - ansible --version
+  - ansible-lint tasks/setup.yml
+  - ansible-playbook --syntax-check
+  environment:
+    ANSIBLE_VERSION: 2.5
+
+---
+kind: pipeline
+name: linux-amd64
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: lint
+  pull: always
+  image: chusiang/ansible:2.6
+  commands:
+  - "echo \"==> Syntax Check on Ansible 2.6 ...\""
+  - ansible --version
+  - ansible-lint tasks/setup.yml
+  - ansible-playbook --syntax-check
+  environment:
+    ANSIBLE_VERSION: 2.6
+
+---
+kind: pipeline
+name: linux-amd64
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: lint
+  pull: always
+  image: chusiang/ansible:2.7
+  commands:
+  - "echo \"==> Syntax Check on Ansible 2.7 ...\""
+  - ansible --version
+  - ansible-lint tasks/setup.yml
+  - ansible-playbook --syntax-check
+  environment:
+    ANSIBLE_VERSION: 2.7
+
+...
