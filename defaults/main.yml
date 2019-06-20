@@ -41,3 +41,8 @@ drone_mysql_data_dir: "/var/lib/mysql/data"
 drone_mysql_password: "drone"
 drone_mysql_user: "drone"
 drone_mysql_db: "drone"
+
+# S3 Storage
+aws_default_region: "us-east-1"
+aws_region: "us-east-1"
+drone_s3_bucket: ""
