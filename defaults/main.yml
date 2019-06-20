@@ -1,3 +1,4 @@
+# server setting
 drone_server_enable: "false"
 drone_agent_enable: "false"
 drone_version: "latest"
@@ -9,23 +10,27 @@ drone_rpc_server: "http://drone-server"
 drone_runner_capacity: "3"
 drone_host_port: "8080"
 
+# github setting
 drone_github_server: "https://github.com"
 drone_github_client_id: ""
 drone_github_client_secret: ""
 drone_github_debug: "false"
 
+# gitlab setting
 drone_gitlab_server: "https://gitlab.com"
 drone_gitlab_client_id: ""
 drone_gitlab_client_secret: ""
 drone_gitlab_skip_verify: "false"
 drone_gitlab_debug: "false"
 
+# gitea setting
 drone_gitea_server: ""
 drone_gitea_client_id: ""
 drone_gitea_client_secret: ""
 drone_gitea_skip_verify: "false"
 drone_gitea_debug: "false"
 
+# database setting
 drone_database_driver: "sqlite"
 drone_sqlite_dir: "/var/lib/drone"
 drone_postgres_data_dir: "/var/lib/postgresql/data"
