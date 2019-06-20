@@ -2,7 +2,6 @@
 drone_server_enable: "false"
 drone_agent_enable: "false"
 drone_version: "latest"
-drone_tls_autocert: "false"
 drone_agents_enabled: "true"
 drone_logs_pretty: "true"
 drone_logs_color: "true"
