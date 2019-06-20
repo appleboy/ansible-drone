@@ -45,3 +45,13 @@ drone_mysql_db: "drone"
 aws_default_region: "us-east-1"
 aws_region: "us-east-1"
 drone_s3_bucket: ""
+
+# Kubernetes
+drone_kubernetes_enabled: False
+drone_kubernetes_namespace: ""
+drone_kubernetes_config_path: ""
+drone_kubernetes_config_url: ""
+drone_kubernetes_ttl_after_finished: "300"
+drone_kubernetes_service_account: ""
+drone_kubernetes_image_pull: "Always"
+drone_kubernetes_image: ""
