@@ -45,6 +45,8 @@ drone_mysql_db: "drone"
 aws_default_region: "us-east-1"
 aws_region: "us-east-1"
 drone_s3_bucket: ""
+aws_access_key_id: ""
+aws_secret_access_key: ""
 
 # Kubernetes
 drone_kubernetes_enabled: False
