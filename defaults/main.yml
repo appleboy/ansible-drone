@@ -30,6 +30,12 @@ drone_gitea_client_secret: ""
 drone_gitea_skip_verify: "false"
 drone_gitea_debug: "false"
 
+# bitbucket setting
+drone_bitbucket_client_id: ""
+drone_bitbucket_client_secret: ""
+drone_bitbucket_debug: "false"
+drone_bitbucket_skip_verify: "false"
+
 # database setting
 drone_database_driver: "sqlite"
 drone_sqlite_dir: "/var/lib/drone"
