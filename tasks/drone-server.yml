@@ -49,7 +49,6 @@
       - "{{ drone_sqlite_dir }}:/data"
     env_file: /etc/drone/drone-server.env
     labels:
-      - "traefik.docker.network=web"
       - "traefik.enable=true"
       - "traefik.basic.frontend.rule=Host:{{ drone_server_host }}"
       - "traefik.basic.port=80"
@@ -74,6 +73,11 @@
     volumes:
       - "{{ drone_sqlite_dir }}:/data"
     env_file: /etc/drone/drone-server.env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.basic.frontend.rule=Host:{{ drone_server_host }}"
+      - "traefik.basic.port=80"
+      - "traefik.basic.protocol=http"
   when: ((drone_server_config is defined and drone_server_config.changed) or
         (drone_postgres_data_dir is defined and drone_postgres_data_dir.changed)) and
         drone_database_driver != "sqlite"
